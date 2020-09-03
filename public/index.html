@@ -20,8 +20,13 @@
 
         socket.emit('mensaje', {nombre: 'Carlos'});
 
-        socket.on('mensaje', function(playload){
+        socket.on('nuevo-mensaje', function(playload){
             console.log('Escuchando:', playload);
+        });
+
+        socket.on('active-bands', function(bands){
+            console.clear();
+            console.table(bands);
         });
     </script>
 </body>
